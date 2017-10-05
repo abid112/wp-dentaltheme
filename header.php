@@ -72,8 +72,8 @@
     <div class="col-md-8">
 
     <div class="head-section">
-        <h3 class="site-title" itemprop="headline"><a href="http://www.badedds.com/">DENTAL PRACTICE OF </a></h3>
-        <h1> <a href="http://www.badedds.com/">Dr. Danial Bds </a> </h1>
+        <h3 class="site-title" itemprop="headline"><a href="#"><?php bloginfo('title');?> </a></h3>
+        <h1> <a href="#"><?php bloginfo('description');?> </a> </h1>
          
     </div>
 
@@ -105,12 +105,11 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                   
                     <ul class="nav navbar-nav">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Our Practice</a></li>
-                        <li><a href="#">General Density</a></li>
-                        <li><a href="#">Special Serices</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Contact Us</a></li>                    
+                        <?php wp_nav_menu(array(
+                    'theme_location'=>'mainmenubar',
+                    'menu_class'=>'nav navbar-nav navbar-right'
+
+                    )) ?>                 
                     </ul>
                 </div><!-- /.navbar-collapse -->               
             </nav>
