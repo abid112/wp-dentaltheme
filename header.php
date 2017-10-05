@@ -107,7 +107,7 @@
                     <ul class="nav navbar-nav">
                         <?php wp_nav_menu(array(
                     'theme_location'=>'mainmenubar',
-                    'menu_class'=>'nav navbar-nav navbar-right'
+                    'menu_class'=>'menu genesis-nav-menu menu-primary'
 
                     )) ?>                 
                     </ul>
