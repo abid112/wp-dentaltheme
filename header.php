@@ -84,14 +84,14 @@
     <span class="phone">
         <span class="call-us" style="text-align: center !important;font-size: 24px;">Call Dr. BADE</span>
         <br>
-        "01712918315"
+        <?php echo get_theme_mod('call') ?>
         </span>
         
         
         </div>
        <br>
         <div class="address">
-        <span>429 Conkey Street Hammond, IN, 46324</span>
+        <span><?php echo get_theme_mod('address') ?></span>
         </div>
 
     </div>
@@ -106,8 +106,8 @@
                   
                     <ul class="nav navbar-nav">
                         <?php wp_nav_menu(array(
-                    'theme_location'=>'mainmenubar',
-                    'menu_class'=>'menu genesis-nav-menu menu-primary'
+                    'theme_location'=>'primary',
+                    'container_class' => 'menu genesis-nav-menu menu-primary'
 
                     )) ?>                 
                     </ul>

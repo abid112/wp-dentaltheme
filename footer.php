@@ -12,11 +12,11 @@
 		<div class="site-footer-nav">
 			<div class="menu-wrap">
 				<ul id="menu-footer" class="nav">
-					<li ><a href="#">Home</a></li>
-					<li ><a href="#">Our Practice</a></li>
-					<li ><a href="#">General Dentistry</a></li>
-					<li ><a href="#">Special Services</a></li>
-					<li ><a href="#">Blog</a></li>
+					<?php wp_nav_menu(array(
+                    'theme_location'=>'footer-links',
+                    'menu_class'=>'nav'
+
+                    )) ?>                 
 					
 				</ul>
 			</div>
@@ -25,7 +25,7 @@
 		</div>
 	</div>
 	<div class="alignright">
-		<p class="creds">Dr. Daniel M. Bade DDS © All Rights Reserved.<br>Web Services: <a style="text-decoration: none" href="http://www.searchlabchicago.com/">Searchlab Chicago</a></p>
+		<p class="creds"><?php echo get_theme_mod('copyright') ?><br><?php echo get_theme_mod('extracontent') ?></p>
 	</div>
 </footer>
 

@@ -257,3 +257,81 @@ require get_template_directory() . '/inc/jetpack.php';
  */
 
 require get_template_directory() . '/inc/navwalker.php';
+
+
+function mycustomize($customize) {
+    $customize->add_section('heading-section', array(
+        'title' => 'Header Option',
+        'priority' => '10',
+    ));
+    $customize->add_setting('callme', array(
+        'default' => 'Call Dr. Bade',
+        'transport' => 'refresh',
+    ));
+    $customize->add_control('callme', array(
+        'section' => 'heading-section',
+        'label' => 'Call Heading Text',
+        'type' => 'text',
+    ));
+    $customize->add_setting('call', array(
+        'default' => '01749677671',
+        'transport' => 'refresh',
+    ));
+    $customize->add_control('call', array(
+        'section' => 'heading-section',
+        'label' => 'Phone Number',
+        'type' => 'text',
+    ));
+        $customize->add_setting('address', array(
+        'default' => '429 Conkey Street Hammond, IN, 46324',
+        'transport' => 'refresh',
+    ));
+    $customize->add_control('address', array(
+        'section' => 'heading-section',
+        'label' => 'Address',
+        'type' => 'text',
+    ));
+   
+    $customize->add_setting('logo_upload', array(
+        'default' => get_template_directory_uri(). '/images/logo.png',
+        'transport' => 'refresh',
+    ));
+    $customize->add_control(
+            new WP_Customize_Image_Control($customize, 'logo_upload', array(
+        'section' => 'heading-section',
+        'label' => 'Logo alternet text',
+        'settings' => 'logo_upload',
+            ))
+    );
+    
+    $customize->add_section('footer-section', array(
+        'title' => 'Footer Option',
+        'priority' => '120',
+    ));
+    $customize->add_setting('copyright', array(
+        'default' => '2016-2017 Offshore Money. All rights reserved.',
+        'transport' => 'refresh',
+    ));
+    $customize->add_control('copyright', array(
+        'section' => 'footer-section',
+        'label' => 'Copyright Text',
+        'type' => 'text',
+    ));
+
+
+    $customize->add_setting('extracontent', array(
+        'default' => 'Website: www.dental.com',
+        'transport' => 'refresh',
+    ));
+    $customize->add_control('extracontent', array(
+        'section' => 'footer-section',
+        'label' => 'Extra Text',
+        'type' => 'text',
+    ));
+}
+add_action('customize_register', 'mycustomize');
+
+
+
+
+
