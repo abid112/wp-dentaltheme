@@ -75,35 +75,42 @@ padding-right: 2%;">
 					
 						
 
-							<main class="content" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
+							<main class="content">
 
 								<div class="home-main-content widget-area">
 
-									<section id="text-9" class="widget widget_text">
+									<section  class="widget widget_text">
 
-										<h4 class="widget-title widgettitle">BRING THE WHOLE FAMILY TO OUR HAMMOND INDIANA DENTAL OFFICE!</h4>
+										<h4 class="widget-title widgettitle"><?php the_title(); ?></h4>
 											<div class="textwidget">
-												<img class="alignleft size-full wp-image-6" alt="Smile Solutions" src="wp-content/uploads/2016/02/happydent.jpg" width="300" height="296" />Welcome to the Hammond, Indiana dental office of Daniel M. Bade, DDS, PC.  Our office strives to provide you with the latest comprehensive dental care with your families comfort in mind. Our dental staff, understands that many people fear going to the dentist and many times, put off necessary dental maintenance.  This can lead to requiring patients to have more invasive dental procedures, such as filling 
+												<div class="alignleft" width="300" height="auto"
+												>
 
-
-
-
-												<p>Dr. Bade specializes in the treatment of TMJ related disorders and </p>
-
-												<p>At our Hammond, Indiana office you will experience a different kind of dental practice. For a dental experience that will make you, your children and the whole family SMILE, call us at 219-931-3235 TODAY! We are centrally located in Hammond, Indiana making it easy for anyone in the Highland, IN and East Chicago, IL area easy access to our office.</p>
+												<?php the_post_thumbnail(array(400,300)); ?>
+												</div>
+												
 
 											</div>
+
+											<?php if ( have_posts() ) : while ( have_posts() ) : the_post();
+											the_content();
+											endwhile; else: ?>
+											<p>Sorry, no posts matched your criteria.</p>
+											<?php endif; ?>
+
 										
 
 									</section>
 
 
-									<section id="text-10" class="widget widget_text">
-										<h4 class="widget-title widgettitle">OUR OFFICE HOURS</h4>
+									<section  class="widget widget_text">
+										
 											<div class="textwidget">
+
 											<div style="clear:both;width:100%;">
 												
 													<table style="border:none;">
+													<h4 class="widget-title widgettitle">OUR OFFICE HOURS</h4>
 														<tr><td>Monday</td><td>9am - 5pm</td></tr>
 														<tr><td>Tuesday</td><td>9am - 4pm</td></tr>
 														<tr><td>Wednesday</td><td>10am - 6pm</td></tr>
@@ -111,9 +118,11 @@ padding-right: 2%;">
 														<tr><td>Friday</td><td>11am - 3pm</td></tr>
 														<tr><td>Saturday</td><td>Closed</td></tr>
 														<tr><td>Sunday</td><td>Closed</td></tr>
-													</table><br /><br />
+													</table>
+
+													<br /><br />
 													<h4 class="widget-title widgettitle"><strong>Contact Information</strong></h4>
-													<hr>
+													
 													<span style="font-size: 20px;">Phone: 219.931.3235<br />
 														429 Conkey Street | Hammond, IN, 46324
 													</span>
